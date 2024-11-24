@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Çevresel Katkı Puanlama Sistemi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="menu">
+                <button id="menuButton" onclick="toggleMenu()">☰</button>
+                <ul id="menuList" class="hidden">
+                    <li><a href="#about">Hazırlayanlar</a></li>
+                    <li><a href="#projectInfo">Nedir?</a></li>
+                </ul>
+            </div>
+            <h1>Çevresel Katkı Puanlama Sistemi</h1>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Proje Bilgisi -->
+        <section id="projectInfo">
+            <h2>Proje Hakkında</h2>
+            <p>Çevreye duyarlı bir nesil yetiştirmeyi amaçlayan, okullarda geri dönüşüm bilincini geliştiren bir projedir...</p>
+        </section>
+
+        <!-- Veri Giriş Butonları -->
+        <section>
+            <h2>Veri Giriş ve Görüntüleme</h2>
+            <button onclick="window.location.href='veri-giris.html'">Veri Girişi</button>
+            <button onclick="window.location.href='veri-gorme.html'">Veri Görme</button>
+            <button onclick="window.location.href='kayit-olma.html'">Kayıt Olma</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>Torbalı Anadolu Lisesi Coğrafya - TÜBİTAK Projesi</p>
+        <p>Danışman Öğretmen: Osman Onuk</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
