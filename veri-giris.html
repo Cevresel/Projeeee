@@ -1,0 +1,26 @@
+// Veri giriş formunu işler ve verileri kaydeder
+document.getElementById('dataForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    var school = document.getElementById('school').value;
+    var wasteType = document.getElementById('wasteType').value;
+    var weight = document.getElementById('weight').value;
+
+    // Verileri localStorage'a kaydediyoruz
+    var data = {
+        school: school,
+        wasteType: wasteType,
+        weight: weight,
+        date: new Date().toLocaleString() // Tarih ekleyelim
+    };
+
+    // Eğer önceden kaydedilmiş veri varsa, üzerine ekleyelim
+    var existingData = JSON.parse(localStorage.getItem('wasteData')) || [];
+    existingData.push(data);
+    localStorage.setItem('wasteData', JSON.stringify(existingData));
+
+    // Formu sıfırlama
+    document.getElementById('dataForm').reset();
+
+    alert('Veri başarıyla kaydedildi!');
+});
