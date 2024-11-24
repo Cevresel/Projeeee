@@ -1,0 +1,22 @@
+// LocalStorage'dan verileri alır ve sayfada görüntüler
+window.onload = function() {
+    var wasteData = JSON.parse(localStorage.getItem('wasteData')) || [];
+
+    var dataDisplay = document.getElementById('dataDisplay');
+    if (wasteData.length === 0) {
+        dataDisplay.innerHTML = '<p>Henüz veri girişi yapılmadı.</p>';
+    } else {
+        wasteData.forEach(function(entry) {
+            var div = document.createElement('div');
+            div.classList.add('data-entry');
+            div.innerHTML = `
+                <p><strong>Okul:</strong> ${entry.school}</p>
+                <p><strong>Atık Türü:</strong> ${entry.wasteType}</p>
+                <p><strong>Atık Miktarı:</strong> ${entry.weight} kg</p>
+                <p><strong>Tarih:</strong> ${entry.date}</p>
+                <hr>
+            `;
+            dataDisplay.appendChild(div);
+        });
+    }
+};
